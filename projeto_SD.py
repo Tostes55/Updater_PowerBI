@@ -2,7 +2,7 @@ import pandas as pd
 import datetime
 import requests
 import tkinter as tk
-from tkinter import filedialog, Text
+from tkinter import filedialog, messagebox
 import os
 
 
@@ -26,7 +26,7 @@ def get_data():
     ownerTeam = 'ATENDIMENTO EXTERNO'
 
     # Executando o GET da Movidesk
-    response = requests.get(f'https://api.movidesk.com/public/v1/tickets?$select=id,ownerTeam,serviceFirstLevel,serviceSecondLevel,serviceThirdLevel,status,origin,resolvedIn&$orderby=resolvedIn&$expand=Clients ($expand=Organization),owner&token={token}&$filter=resolvedIn ge ({data_inicio}) and resolvedIn le ({data_fim}) and ownerTeam eq ({ownerTeam})')    
+    response = requests.get(f'https://api.movidesk.com/public/v1/tickets?$select=id,ownerTeam,serviceFirstLevel,serviceSecondLevel,serviceThirdLevel,status,origin,resolvedIn&$orderby=resolvedIn&$expand=Clients ($expand=Organization),owner&token={token}&$filter=resolvedIn ge ({data_inicio}) and resolvedIn le ({data_final}) and ownerTeam eq ({ownerTeam})')    
     data = response.json()
 
     if get_data.response.status_code == 200:
