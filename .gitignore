@@ -1,0 +1,5 @@
+output.xlsx
+**dist
+**build
+*.png
+log_app.txt
