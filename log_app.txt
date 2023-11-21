@@ -1,4 +1,0 @@
-root - INFO - Comando get pronto para ser executado
-root - INFO - Comando get pronto para ser executado
-root - INFO - Making GET request to URL: https://api.movidesk.com/public/v1/tickets?$select=id,ownerTeam,serviceFirstLevel,serviceSecondLevel,serviceThirdLevel,status,origin,resolvedIn&$orderby=resolvedIn&$expand=Clients($expand=Organization),owner&token=4913d642-488b-4743-a817-b09a3166541a&$filter=resolvedIn ge 2023-11-01T00:00:00.00z and resolvedIn le 2023-11-02T00:00:00.00z and ownerTeam eq 'ATENDIMENTO EXTERNO'
-root - INFO - Data saved to output.xlsx
