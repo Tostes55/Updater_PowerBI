@@ -3,9 +3,11 @@ import requests
 import logging
 import locale
 import pandas as pd
+from token_movidesk import token_api
 from tkinter import *
 from tkinter import messagebox
 from tkcalendar import *
+
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
 
@@ -17,7 +19,7 @@ class Ambiente:
     def __init__(self):
         self.data_inicio = None
         self.data_final = None
-        self.token = '4913d642-488b-4743-a817-b09a3166541a'
+        self.token = token_api
         self.ownerTeam = 'ATENDIMENTO EXTERNO'
 
     def get_data(self):
@@ -45,7 +47,7 @@ class Ambiente:
             logging.error(f'Erro na solicitação HTTP: {e}')
             return None
 
-    def save_as_xlsx(self, data, filename='output.xlsx'):
+    def save_as_xlsx(self, data, filename='output.xlsx'): 
         if data is not None:
             try:
                 if isinstance(data, list) and len(data) > 0:
